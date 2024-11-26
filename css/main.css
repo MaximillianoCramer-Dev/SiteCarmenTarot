@@ -141,7 +141,7 @@ body {
   
   .carousel-control-prev-icon,
 .carousel-control-next-icon {
-  background-color: #DC3545; /* Torna os ícones visíveis com um fundo semitransparente */
+  background-color: #dc35466e; /* Torna os ícones visíveis com um fundo semitransparente */
   border-radius: 50%; /* Forma arredondada */
 }
 
@@ -150,10 +150,27 @@ body {
   width: 5%; /* Ajusta o tamanho das áreas clicáveis */
 }
 
+.carousel-item {
+  transition: transform 1s ease-in-out; /* Ajusta a animação de transição dos itens */
+}
+
+.carousel-fade .carousel-item-next,
+.carousel-fade .carousel-item-prev,
+.carousel-fade .carousel-item.active {
+  transition: opacity 1s ease-in-out; /* Anima a opacidade para criar efeito de fade */
+}
+
+.carousel-fade .carousel-item-next, 
+.carousel-fade .carousel-item-prev {
+  opacity: 0;
+}
+
+
 .rodape{
+    background-color:#DC3545;
+    padding: 1rem;
     text-align: center;
-    height: 50px;
-    background-color: #DC3545;
+    font-size: 0.9rem;
 }
 
 a{
