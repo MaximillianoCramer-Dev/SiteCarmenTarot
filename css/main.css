@@ -78,7 +78,7 @@ body {
 
   /* Estilo para a seção home */
 .home-section {
-    background-image: url('/assets/img/Cigano.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('../img/Cigano.jpg'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Faz a imagem ocupar toda a área */
     background-position: center; /* Centraliza a imagem */
     height: 100vh; /* Faz a seção ocupar a altura total da tela */
