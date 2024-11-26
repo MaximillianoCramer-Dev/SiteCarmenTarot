@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: aliceblue;
+  }
+  section {
+    padding: 60px 0;
+  }
+
+  h2{
+    font-size: 50px;
+    font-family: "Protest Revolution", sans-serif;
+  }
+
+  h1{
+    font-family: "Protest Revolution", sans-serif;
+  }
+  h5{
+    font-family: "Protest Revolution", sans-serif;
+  }
+
+  p{
+    font-family: "Edu AU VIC WA NT Hand";
+    font-size: 20px;
+  }
+
+  .navbar-icon {
+    width: 100%;  /* Largura do ícone */
+    height: auto; /* Altura do ícone */
+    max-width: 80px;
+    object-fit: cover; /* Ajusta a imagem para cobrir a área sem distorção */
+    border: none; /* Remove a borda preta */
+    outline: none; /* Remove a borda de foco */
+  }
+  
+  .navbar-toggler {
+    border: none; /* Remove a borda preta */
+    outline: none; /* Remove a borda de foco */
+    padding: 0; /* Ajusta o espaçamento interno do botão */
+    opacity: 0.5;
+  }
+
+  .navbar-toggler span {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    opacity: 0.9;  /* Quando o botão estiver focado (ao clicar ou quando ativo), ele fica opaco */
+  }
+
+  .offcanvas-header{
+    background-color:#dc3546c7 !important;
+  }
+  .offcanvas-start {
+    width: 150px !important;  /* Largura do menu, usando !important para garantir que seja aplicada */
+  }
+
+  /* Alterar a cor de fundo do menu */
+  .offcanvas-body {
+    background-color:#dc3546c7 !important; /* Cor de fundo suave, com opacidade */
+  }
+
+  /* Tornar o texto mais legível e reduzir o contraste */
+  .navbar-nav .nav-link {
+    color: #333 !important; /* Cor do texto do menu, usando !important */
+  }
+
+  /* Ajuste do título do menu */
+  .offcanvas-header h5 {
+    font-size: 18px !important;  /* Tamanho da fonte do título */
+  }
+
+  /* Garantir que a imagem de ícone do menu seja responsiva */
+  .navbar-icon {
+    width: 80px;
+    height: auto;
+  }
+  
+
+  /* Estilo para a seção home */
+.home-section {
+    background-image: url('/assets/img/FundoCigano.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Faz a imagem ocupar toda a área */
+    background-position: center; /* Centraliza a imagem */
+    height: 100vh; /* Faz a seção ocupar a altura total da tela */
+    position: relative; /* Necessário para a overlay funcionar */
+  }
+  
+  .home-section .overlay {
+    background-color:#DC3545; /* Fundo semitransparente sobre a imagem */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #DC3545; /* Torna os ícones visíveis com um fundo semitransparente */
+  border-radius: 50%; /* Forma arredondada */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Ajusta o tamanho das áreas clicáveis */
+}
+
+.rodape{
+    text-align: center;
+}
