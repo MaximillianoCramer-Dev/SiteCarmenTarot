@@ -57,52 +57,50 @@
     <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
     <script>
       (function() {
-        var target = document.currentScript;
+  var target = document.currentScript;
 
-        function setupGoogleCalendar() {
-          if (window.innerWidth <= 768) {
-            // Para telas menores (celulares/tablets)
-            const button = document.createElement('a');
-            button.href = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=truemode=mobile';
-            button.target = '_blank'; // Abre em nova aba
-            button.rel = 'noopener noreferrer'; // Protege contra reverse tabnabbing e melhora desempenho
-            button.textContent = 'Agende uma consulta';
-            button.style.backgroundColor = '#DC3545';
-            button.style.color = '#ffffff';
-            button.style.padding = '10px 20px';
-            button.style.borderRadius = '5px';
-            button.style.textDecoration = 'none';
-            button.style.display = 'inline-block';
-            button.style.marginTop = '10px';
+  function setupGoogleCalendar() {
+    if (window.innerWidth <= 768) {
+      // Para telas menores (celulares/tablets), cria um botão customizado se ele não existir
+      if (!document.querySelector('.custom-calendar-button')) { 
+        const button = document.createElement('a');
+        button.href = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=truemode=mobile';
+        button.target = '_blank'; // Abre em nova aba
+        button.rel = 'noopener noreferrer'; // Protege contra reverse tabnabbing e melhora desempenho
+        button.textContent = 'Agende uma consulta';
+        button.style.backgroundColor = '#DC3545';
+        button.style.color = '#ffffff';
+        button.style.padding = '10px 20px';
+        button.style.borderRadius = '5px';
+        button.style.textDecoration = 'none';
+        button.style.display = 'inline-block';
+        button.style.marginTop = '10px';
+        button.classList.add('custom-calendar-button'); // Adiciona uma classe para identificar o botão
 
-            // Substitui o botão do calendário pelo novo botão
-            target.parentNode.replaceChild(button, target);
-          } else {
-            // Para telas maiores (desktop)
-            calendar.schedulingButton.load({
-              url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=true',
-              color: '#DC3545',
-              label: "Agende uma consulta",
-              target,
-            });
-          }
-        }
-
-        // Chama a função após o carregamento da página
-        window.addEventListener('load', setupGoogleCalendar);
-
-        // Atualiza o botão ao redimensionar a janela
-        window.addEventListener('resize', function() {
-  // Atualiza apenas o botão de calendário sem recarregar a página
-  const target = document.querySelector('script[src="https://calendar.google.com/calendar/scheduling-button-script.js"]');
-  if (target) {
-    target.parentNode.removeChild(target); // Remove o script antigo
-    const newScript = document.createElement('script');
-    newScript.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
-    newScript.async = true;
-    target.parentNode.appendChild(newScript); // Adiciona o novo script
+        // Substitui o botão do Google Calendar pelo botão customizado
+        target.parentNode.replaceChild(button, target);
+      }
+    } else {
+      // Para telas maiores (desktop), carrega o botão original do Google Calendar, se ele não existir
+      if (typeof calendar !== 'undefined' && calendar.schedulingButton && !document.querySelector('.custom-calendar-button')) {
+        calendar.schedulingButton.load({
+          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=true',
+          color: '#DC3545',
+          label: "Agende uma consulta",
+          target,
+        });
+      }
+    }
   }
-});
+
+  // Chama a função após o carregamento da página
+  window.addEventListener('load', setupGoogleCalendar);
+
+  // Atualiza o botão ao redimensionar a janela sem recarregar a página
+  window.addEventListener('resize', setupGoogleCalendar);
+})();
+
+
     </script>
     <!-- end Google Calendar Appointment Scheduling -->
   </div>
