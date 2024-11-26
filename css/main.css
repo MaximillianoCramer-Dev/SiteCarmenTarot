@@ -75,6 +75,60 @@ body {
     height: auto;
   }
   
+/* Estilos padrão para telas maiores */
+.home-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.home-section h1 {
+  font-size: 3rem; /* Tamanho do título */
+}
+
+.home-section p {
+  font-size: 1.2rem; /* Tamanho do texto */
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Estilos para telas menores (celulares) */
+@media (max-width: 768px) {
+  .home-section h1 {
+      font-size: 2rem; /* Tamanho maior para celulares */
+  }
+
+  .home-section p {
+      font-size: 1rem; /* Ajuste do texto para caber na tela */
+  }
+
+  .overlay {
+      padding: 10px;
+  }
+}
+
+/* Estilos para o botão do Google Calendar */
+.calendar-scheduling-button {
+  font-size: 1.2rem !important; /* Ajuste do tamanho da fonte */
+  padding: 10px 20px !important; /* Ajuste de espaço interno */
+  border-radius: 5px !important; /* Bordas arredondadas */
+}
+
+/* Ajuste para telas menores */
+@media (max-width: 768px) {
+  .calendar-scheduling-button {
+      font-size: 1rem !important;
+      padding: 8px 16px !important;
+  }
+}
+
 
   /* Estilo para a seção home */
 .home-section {
