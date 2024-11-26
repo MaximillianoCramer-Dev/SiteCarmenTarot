@@ -23,6 +23,34 @@ body {
     font-size: 20px;
   }
 
+  .scroll-down {
+    position: fixed;
+    width: 50px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    background-color:#213e75;
+    border-radius: 40px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1000;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+  
   .navbar-icon {
     width: 100%;  /* Largura do ícone */
     height: auto; /* Altura do ícone */
@@ -106,9 +134,12 @@ body {
 
 .rodape{
     text-align: center;
+    height: 50px;
+    background-color: #DC3545;
 }
 
 a{
   text-decoration: none;
-  color: black;
+  color: white;
 }
+
