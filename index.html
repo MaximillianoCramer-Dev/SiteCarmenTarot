@@ -47,29 +47,60 @@
   
 
   <!-- Home -->
+<!-- Home -->
 <section id="home" class="home-section text-center text-white d-flex align-items-center justify-content-center">
-    <div class="overlay">
-      <h1 class="display-4">Carmen Tarot</h1>
-      <p>"O destino está escrito, os caminhos são escolhas."</p>
-      <!-- Google Calendar Appointment Scheduling begin -->
-      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-      <script>
-        (function() {
-          var target = document.currentScript;
-          window.addEventListener('load', function() {
+  <div class="overlay">
+    <h1 class="display-4">Carmen Tarot</h1>
+    <p>"O destino está escrito, os caminhos são escolhas."</p>
+    <!-- Google Calendar Appointment Scheduling begin -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+      (function() {
+        var target = document.currentScript;
+
+        function setupGoogleCalendar() {
+          if (window.innerWidth <= 768) {
+            // Para telas menores (celulares/tablets)
+            const button = document.createElement('a');
+            button.href = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=truemode=mobile';
+            button.target = '_blank'; // Abre em nova aba
+            button.rel = 'noopener noreferrer'; // Protege contra reverse tabnabbing e melhora desempenho
+            button.textContent = 'Agende uma consulta';
+            button.style.backgroundColor = '#DC3545';
+            button.style.color = '#ffffff';
+            button.style.padding = '10px 20px';
+            button.style.borderRadius = '5px';
+            button.style.textDecoration = 'none';
+            button.style.display = 'inline-block';
+            button.style.marginTop = '10px';
+
+            // Substitui o botão do calendário pelo novo botão
+            target.parentNode.replaceChild(button, target);
+          } else {
+            // Para telas maiores (desktop)
             calendar.schedulingButton.load({
               url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=true',
               color: '#DC3545',
               label: "Agende uma consulta",
               target,
             });
-          });
-        })();
-      </script>
-      <!-- end Google Calendar Appointment Scheduling -->
-    </div>
-  </section>
+          }
+        }
+
+        // Chama a função após o carregamento da página
+        window.addEventListener('load', setupGoogleCalendar);
+
+        // Atualiza o botão ao redimensionar a janela
+        window.addEventListener('resize', function() {
+          location.reload(); // Recarrega para ajustar ao tamanho da tela
+        });
+      })();
+    </script>
+    <!-- end Google Calendar Appointment Scheduling -->
+  </div>
+</section>
+
   
   
 
