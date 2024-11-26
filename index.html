@@ -36,7 +36,7 @@
               <a class="nav-link" href="#produtos">Produtos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#sobre">Depoimentos</a>
+              <a class="nav-link" href="#depoimentos">Depoimentos</a>
             </li>
           </ul>
         </div>
@@ -93,9 +93,16 @@
 
         // Atualiza o botão ao redimensionar a janela
         window.addEventListener('resize', function() {
-          location.reload(); // Recarrega para ajustar ao tamanho da tela
-        });
-      })();
+  // Atualiza apenas o botão de calendário sem recarregar a página
+  const target = document.querySelector('script[src="https://calendar.google.com/calendar/scheduling-button-script.js"]');
+  if (target) {
+    target.parentNode.removeChild(target); // Remove o script antigo
+    const newScript = document.createElement('script');
+    newScript.src = 'https://calendar.google.com/calendar/scheduling-button-script.js';
+    newScript.async = true;
+    target.parentNode.appendChild(newScript); // Adiciona o novo script
+  }
+});
     </script>
     <!-- end Google Calendar Appointment Scheduling -->
   </div>
