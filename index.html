@@ -1,268 +1,333 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carmen Tarot</title>
+
   <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="css/main.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Protest+Revolution&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="img/Profile (1).jpeg" type="image/x-icon">
-  <!-- Título que aparece no compartilhamento -->
-  <meta property="og:title" content="Carmen Tarot">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- Descrição que aparece abaixo do título -->
-  <meta property="og:description" content="O destino está escrito, os caminhos são escolhas. Agende sua consulta hoje!">
-    
-  <!-- URL do site -->
-  <meta property="og:url" content="https://maximillianocramer-dev.github.io/SiteCarmenTarot/">
- 
-  <!-- URL da imagem que será exibida no compartilhamento -->
-  <meta property="og:image" content="https://raw.githubusercontent.com/MaximillianoCramer-Dev/SiteCarmenTarot/main/img/CiganoCC.jpg">
-    
-  <!-- Tipo do conteúdo -->
-  <meta property="og:type" content="website">
-    
-  <!-- Para WhatsApp especificamente -->
-   <meta name="theme-color" content="#ffffff">
- 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Protest+Revolution&display=swap"
+    rel="stylesheet" />
 
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="img/Profile (1).jpeg" type="image/x-icon" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Carmen Tarot" />
+  <meta property="og:description"
+    content="O destino está escrito, os caminhos são escolhas. Agende sua consulta hoje!" />
+  <meta property="og:url" content="https://maximillianocramer-dev.github.io/SiteCarmenTarot/" />
+  <meta property="og:image"
+    content="https://raw.githubusercontent.com/MaximillianoCramer-Dev/SiteCarmenTarot/main/img/CiganoCC.jpg" />
+  <meta property="og:type" content="website" />
+
+  <!-- Theme Color for WhatsApp -->
+  <meta name="theme-color" content="#ffffff" />
 </head>
+
 <body>
-  <!-- Navbar -->
-  <nav class="navbar bg-transparent fixed-top">
-    <div class="container-fluid">
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-        <span><img src="img/Profile (1).jpeg" alt="Ícone" class="navbar-icon"></span>
-      </button>
-      <!-- Menu lateral -->
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-        <div class="offcanvas-header">
-          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+
+ <!-- Navbar -->
+<nav class="navbar bg-transparent fixed-top">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span>
+        <img src="img/Profile (1).jpeg" alt="Ícone" class="navbar-icon" id="profileIcon" />
+        
+        <!-- Balão de diálogo -->
+        <div id="dialogBox1" class="dialog-box">
+          <p>Olá, como estão os movimentos hoje?</p>
         </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#home">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sobre">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#produtos">Produtos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#depoimentos">Depoimentos</a>
-            </li>
-          </ul>
+
+        <!-- Segundo balão de diálogo -->
+        <div id="dialogBox2" class="dialog-box">
+          <p>A agenda está aberta, consulte seus horários.</p>
         </div>
-      </div>
+        
+        <!-- Terceiro balão de diálogo -->
+        <div id="dialogBox3" class="dialog-box">
+          <p>Aperte em mim ou role para baixo para ver mais conteúdos.</p>
+        </div>
+
+      </span>
+    </button>
+  </div>
+</nav>
+
+
+  <!-- Menu lateral -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
+    <div class="offcanvas-body">
+      <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#sobre">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#produtos">Produtos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#depoimentos">Depoimentos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
   </nav>
-  
-  
 
   <!-- Home -->
-<!-- Home -->
-<section id="home" class="home-section text-center text-white d-flex align-items-center justify-content-center">
-  <div class="overlay">
-    <h1 class="display-4">Carmen Tarot</h1>
-    <p>"O destino está escrito, os caminhos são escolhas."</p>
-    <!-- Google Calendar Appointment Scheduling begin -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
-    <script>
-      (function() {
-  var target = document.currentScript;
+  <section id="home" class="home-section text-center text-white d-flex align-items-center justify-content-center">
+    <div class="overlay">
+      <h1 class="display-4">Carmen Tarot</h1>
+      <p>"O destino está escrito, os caminhos são escolhas."</p>
 
-  function setupGoogleCalendar() {
-    if (window.innerWidth <= 768) {
-      // Para telas menores (celulares/tablets), cria um botão customizado se ele não existir
-      if (!document.querySelector('.custom-calendar-button')) { 
-        const button = document.createElement('a');
-        button.href = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=truemode=mobile';
-        button.target = '_blank'; // Abre em nova aba
-        button.rel = 'noopener noreferrer'; // Protege contra reverse tabnabbing e melhora desempenho
-        button.textContent = 'Agende uma consulta';
-        button.style.backgroundColor = '#831D1A';
-        button.style.color = '#ffffff';
-        button.style.padding = '10px 20px';
-        button.style.borderRadius = '5px';
-        button.style.textDecoration = 'none';
-        button.style.display = 'inline-block';
-        button.style.marginTop = '10px';
-        button.classList.add('custom-calendar-button'); // Adiciona uma classe para identificar o botão
+      <!-- Google Calendar Appointment Scheduling -->
+      <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet" />
+      <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+      <script>
+        (function () {
+          var target = document.currentScript;
 
-        // Substitui o botão do Google Calendar pelo botão customizado
-        target.parentNode.replaceChild(button, target);
-      }
-    } else {
-      // Para telas maiores (desktop), carrega o botão original do Google Calendar, se ele não existir
-      if (typeof calendar !== 'undefined' && calendar.schedulingButton && !document.querySelector('.custom-calendar-button')) {
-        calendar.schedulingButton.load({
-          url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=true',
-          color: '#DC3545',
-          label: "Agende uma consulta",
-          target,
-        });
-      }
-    }
-  }
+          function setupGoogleCalendar() {
+            if (window.innerWidth <= 768) {
+              // Para telas menores (celulares/tablets), cria um botão customizado se ele não existir
+              if (!document.querySelector(".custom-calendar-button")) {
+                const button = document.createElement("a");
+                button.href =
+                  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=truemode=mobile";
+                button.target = "_blank"; // Abre em nova aba
+                button.rel = "noopener noreferrer"; // Protege contra reverse tabnabbing e melhora desempenho
+                button.textContent = "Agende uma consulta";
+                button.style.backgroundColor = "#831D1A";
+                button.style.color = "#ffffff";
+                button.style.padding = "10px 20px";
+                button.style.borderRadius = "5px";
+                button.style.textDecoration = "none";
+                button.style.display = "inline-block";
+                button.style.marginTop = "10px";
+                button.classList.add("custom-calendar-button"); // Adiciona uma classe para identificar o botão
 
-  // Chama a função após o carregamento da página
-  window.addEventListener('load', setupGoogleCalendar);
+                // Substitui o botão do Google Calendar pelo botão customizado
+                target.parentNode.replaceChild(button, target);
+              }
+            } else {
+              // Para telas maiores (desktop), carrega o botão original do Google Calendar, se ele não existir
+              if (
+                typeof calendar !== "undefined" &&
+                calendar.schedulingButton &&
+                !document.querySelector(".custom-calendar-button")
+              ) {
+                calendar.schedulingButton.load({
+                  url: "https://calendar.google.com/calendar/appointments/schedules/AcZssZ18-poJCAOjQNsSRyyDmxYFxjDtBJx_xgFrdNUTrcWnPvgT-49hjRJ7c9H24K5ggq7xIDCSFQV7?gv=true",
+                  color: "#DC3545",
+                  label: "Agende sua consulta aqui",
+                  target,
+                });
+              }
+            }
+          }
 
-  // Atualiza o botão ao redimensionar a janela sem recarregar a página
-  window.addEventListener('resize', setupGoogleCalendar);
-})();
+          // Chama a função após o carregamento da página
+          window.addEventListener("load", setupGoogleCalendar);
 
-
-    </script>
-    <!-- end Google Calendar Appointment Scheduling -->
-  </div>
-</section>
-
-  
-  
+          // Atualiza o botão ao redimensionar a janela sem recarregar a página
+          window.addEventListener("resize", setupGoogleCalendar);
+        })();
+      </script>
+    </div>
+  </section>
 
   <!-- Sobre -->
   <section id="sobre" class="p-5 bg-danger text-white">
     <div class="container">
-      <h2>Sobre mim</h2>
-      <p>Sou Alessandra (Carmen), filha de Iemanjá. Há mais de 20 anos nesta caminhada espiritual, junto com a espiritualidade com a qual trabalho e o dom recebido da minha ancestralidade, conseguimos ajudar muitas pessoas, não apenas com o atendimento de tarô, mas também com a vidência, quando assim permitido, sempre respeitando o poder de Deus e a Sua permissão acima de tudo.</p>
+      <h2 class="text-center">Sobre mim</h2>
+      <p>
+        Sou Alessandra (Carmen), filha de Iemanjá. Há mais de 20 anos nesta
+        caminhada espiritual, junto com a espiritualidade com a qual trabalho
+        e o dom recebido da minha ancestralidade, conseguimos ajudar muitas
+        pessoas, não apenas com o atendimento de tarô, mas também com a
+        vidência, quando assim permitido, sempre respeitando o poder de Deus e
+        a Sua permissão acima de tudo.
+      </p>
     </div>
   </section>
 
- <!-- Produtos -->
-<section id="produtos" class="p-5">
+  <!-- Produtos -->
+  <section id="produtos" class="p-5">
     <div class="container">
-      <h2>Produtos</h2>
+      <h2 class="text-center">Produtos</h2>
       <div class="row">
         <!-- Card 1 -->
         <div class="col-md-6 mb-4">
           <div class="card">
-            <img src="img/Profile (2).jpeg" class="card-img-top img-card" alt="Produto 1">
+            <img src="img/Profile (2).jpeg" class="card-img-top img-card" alt="Produto 1" />
             <div class="card-body">
               <h5 class="card-title">Tarot</h5>
               <p class="card-text">
-                Tarô, baralho ou cartas — seja como for, realizamos uma leitura do seu momento atual para orientar os melhores caminhos a serem seguidos. A consulta abrange temas pessoais, familiares, amorosos ou profissionais. Além disso, auxiliamos na orientação de negociações empresariais ou pessoais (como tomadas de    decisões).
-                Os atendimentos são realizados online, por videochamada, permitindo uma triagem ao vivo com duração de 40 a 60 minutos.</p>
+                Tarô, baralho ou cartas — seja como for, realizamos uma
+                leitura do seu momento atual para orientar os melhores
+                caminhos a serem seguidos. A consulta abrange temas pessoais,
+                familiares, amorosos ou profissionais. Além disso, auxiliamos
+                na orientação de negociações empresariais ou pessoais (como
+                tomadas de decisões). Os atendimentos são realizados online,
+                por videochamada, permitindo uma triagem ao vivo com duração
+                de 40 a 60 minutos.
+              </p>
             </div>
           </div>
         </div>
-  
+
         <!-- Card 2 -->
         <div class="col-md-6 mb-4">
           <div class="card">
-            <img src="img/Banhos.jpg" class="card-img-top img-card" alt="Produto 2">
+            <img src="img/Banhos.jpg" class="card-img-top img-card" alt="Produto 2" />
             <div class="card-body">
               <h5 class="card-title">Banhos terapêuticos</h5>
-              <p class="card-text">Banho de limpeza.</p>
-              <p class="card-text">Banho de abertura de caminhos.</p>
-              <p class="card-text">Banho da abundância.</p>
-              <p class="card-text">Banho de equilíbrio.</p>
-              <p class="card-text">Banho calmante.</p>
-              <p class="card-text">Banho das sete ervas.</p>
-              <p class="card-text">Banho de proteção.</p>
-              <p class="card-text">Banhos para tratamento (13 banhos segundo a necessidade de cada um).</p>
+              <p class="card-text">
+              <p>Banho de limpeza.</p>
+
+              <p>Banho de abertura de caminhos.</p>
+
+              <p>Banho da abundância.</p>
+
+              <p>Banho de equilíbrio.</p>
+
+              <p>Banho calmante.</p>
+
+              <p>Banho das sete ervas.</p>
+
+              <p>Banho de proteção.</p>
+
+              <p>Banhos para tratamento (13 banhos segundo a necessidade de cada um).</p>
+              </p>
             </div>
           </div>
         </div>
-  
+
         <!-- Card 3 -->
         <div class="col-md-6 mb-4">
           <div class="card">
-            <img src="img/divorcio.avif" class="card-img-top img-card" alt="Produto 3">
+            <img src="img/divorcio.avif" class="card-img-top img-card" alt="Produto 3" />
             <div class="card-body">
               <h5 class="card-title">Divórcio energético</h5>
               <p class="card-text">
-                O divórcio energético é uma prática que consiste em cortar os cordões energéticos que unem duas pessoas, permitindo que cada uma siga seu caminho sem que a energia do outro prejudique. 
-                O divórcio energético pode ser feito em diversas situações, mas é mais comum em casos de término de um relacionamento. Ele pode ser útil também em outras relações que tenham causado impacto significativo, como amizades, parcerias profissionais e familiares.
-              </p>
-              <p>O divórcio energético pode ajudar a:
-                Liberar energia negativa e bloqueada,
-                eliminar padrões negativos,
-                obstruir a energia positiva,
-                livrar-se de mágoa, dor e sofrimento,
-                recuperar a energia e a liberdade emocional.
+                O divórcio energético é uma prática que consiste em cortar os cordões energéticos que unem duas pessoas,
+                permitindo que cada uma siga seu caminho sem que a energia do outro prejudique. O divórcio energético
+                pode ser
+                feito em diversas situações, mas é mais comum em casos de término de um relacionamento. Ele pode ser
+                útil também
+                em outras relações que tenham causado impacto significativo, como amizades, parcerias profissionais e
+                familiares.
+                O divórcio energético pode ajudar a: Liberar energia negativa e bloqueada, eliminar padrões negativos,
+                obstruir
+                a energia positiva, livrar-se de mágoa, dor e sofrimento, recuperar a energia e a liberdade emocional.
               </p>
             </div>
           </div>
         </div>
-  
+
         <!-- Card 4 -->
         <div class="col-md-6 mb-4">
           <div class="card">
-            <img src="img/terapia.avif" class="card-img-top img-card" alt="Produto 4">
+            <img src="img/terapia.avif" class="card-img-top img-card" alt="Produto 4" />
             <div class="card-body">
               <h5 class="card-title">Terapia espiritual</h5>
               <p class="card-text">
-                As sessões acontecem uma vez por semana, com duração de 40 a 60 minutos. Juntas, vamos até a origem dos fatores que interferem na sua caminhada atual, para desobstruir os caminhos bloqueados por traumas e medos, sejam do passado ou da atualidade. Sou especialista em tratar mulheres que sofreram ou ainda sofrem em relacionamentos abusivos, tanto amorosos quanto familiares.
-                A importância de se conhecer, se aceitar, perdoar e se perdoar é fundamental para seguir nossos caminhos com mais leveza, para que possamos alcançar o destino que já está escrito, onde o caminho é construído pelas nossas escolhas.</p>
+                As sessões acontecem uma vez por semana, com duração de 40 a 60 minutos. Juntas, vamos até a origem dos
+                fatores que interferem na sua caminhada atual, para desobstruir os caminhos bloqueados por traumas e
+                medos, sejam do passado ou da atualidade. Sou especialista em tratar mulheres que sofreram ou ainda
+                sofrem em relacionamentos abusivos, tanto amorosos quanto familiares. A importância de se conhecer, se
+                aceitar, perdoar e se perdoar é fundamental para seguir nossos caminhos com mais leveza, para que
+                possamos alcançar o destino que já está escrito, onde o caminho é construído pelas nossas escolhas.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  
 
   <!-- Depoimentos -->
-<!-- Depoimentos -->
-<section id="depoimentos" class="py-5 bg-light">
-  <div class="container">
-    <h2 class="text-center mb-4">Depoimentos</h2>
-    <div id="depoimentosCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="20000">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <blockquote class="blockquote text-center">
-            <p class="mb-4">"Quero dar meu testemunho porque trabalhar com a Ale tem sido extraordinário e crucial para o meu renascimento. Eu a conheci através de indicação para leitura de Tarot e eu estava realmente mal, mas ela foi tão certeira na leitura e me senti tão leve, que decidi continuar o meu tratamento com ela. Eu passei por um periodo muito dificil onde quase deixei de existir e posso dizer hoje que existe uma Carolina Antes e uma Carolina Depois da Alessandra. Com a ajuda dela consegui renascer, ir da agua pro vinho e me curar de uma depressão  profunda. Serei eternamente grata à ela."</p>
-            <footer class="blockquote-footer">Carolina</footer>
-          </blockquote>
+  <section id="depoimentos" class="p-5 bg-light">
+    <div class="container">
+      <h2 class="text-center">Depoimentos</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <img src="img/Profile (3).jpeg" class="card-img-top img-card" alt="Depoimento 1" />
+            <div class="card-body">
+              <p class="card-text">
+                "Quero dar meu testemunho porque trabalhar com a Ale tem sido extraordinário e crucial para o meu
+                renascimento. Eu a conheci através de indicação para leitura de Tarot e eu estava realmente mal, mas ela
+                foi tão certeira na leitura e me senti tão leve, que decidi continuar o meu tratamento com ela. Eu
+                passei por um periodo muito dificil onde quase deixei de existir e posso dizer hoje que existe uma
+                Carolina Antes e uma Carolina Depois da Alessandra. Com a ajuda dela consegui renascer, ir da agua pro
+                vinho e me curar de uma depressão profunda. Serei eternamente grata à ela."
+              </p>
+              <footer class="card-footer"><em>"Carolina"</em></footer>
+            </div>
+          </div>
         </div>
-        <div class="carousel-item">
-          <blockquote class="blockquote text-center">
-            <p class="mb-4">
-                " O trabalho da Ale é muito profissional e transparente. Me passa sempre muita confiança porque é sempre bem sincera nas consultas e tem nível de visão e detalhe impressionantes. 
-                Tudo o que vimos nas sessões de tarot realmente aconteceram  o detalhe e na sequência que ela falou. Confio muito, super recomendo"</p>
-            <footer class="blockquote-footer">Ester</footer>
-          </blockquote>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img src="img/Profile (3).jpeg" class="card-img-top img-card" alt="Depoimento 2" />
+            <div class="card-body">
+              <p class="card-text">
+                " O trabalho da Ale é muito profissional e transparente. Me passa sempre muita confiança porque é sempre
+                bem sincera nas consultas e tem nível de visão e detalhe impressionantes. Tudo o que vimos nas sessões
+                de tarot realmente aconteceram o detalhe e na sequência que ela falou. Confio muito, super recomendo"
+              </p>
+              <footer class="card-footer"><em>"Ana Paula"</em></footer>
+            </div>
+          </div>
         </div>
-        <div class="carousel-item">
-          <blockquote class="blockquote text-center">
-            <p class="mb-4">Minha experiência com o trabalho da Alessandra me norteia a mais de ano, suas tiragens são sempre pontuais e de fato esclarecedoras além de acertivas. A clareza e objetividade são pontos característicos dessa profissional, isso no quesito conselho, tendências e espiritualidade. Com toda certeza uma profissional de indico, empática, solidária, imparcial e coerente.</p>
-            <footer class="blockquote-footer">Ana</footer>
-          </blockquote>
+
+        <div class="col-md-4">
+          <div class="card">
+            <img src="img/Profile (3).jpeg" class="card-img-top img-card" alt="Depoimento 3" />
+            <div class="card-body">
+              <p class="card-text">
+                Minha experiência com o trabalho da Alessandra me norteia a mais de ano, suas tiragens são sempre
+                pontuais e de fato esclarecedoras além de acertivas. A clareza e objetividade são pontos característicos
+                dessa profissional, isso no quesito conselho, tendências e espiritualidade. Com toda certeza uma
+                profissional de indico, empática, solidária, imparcial e coerente.
+              </p>
+              <footer class="card-footer"><em>"Marcela"</em></footer>
+            </div>
+          </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Próximo</span>
-      </button>
     </div>
-  </div>
-</section>
-
-
-<!-- Seta para rolar -->
-<a href="#!" class="scroll-down" id="scrollArrow">
-  <i class="bi bi-chevron-down"></i>
-</a>
+  </section>
 
   <footer class="rodape">
-    <p>&copy; 2024 <a href="https://www.linkedin.com/in/maximilliano-cramer1996/" target="_blank" rel="noopener noreferrer"><em>Maximilliano Cramer</em></a> - Todos os direitos reservados</p>
+    <div class="container">
+      <p>&copy; 2024 <a href="https://www.linkedin.com/in/maximilliano-cramer1996/" target="_blank" rel="noreferrer noopener"><em>Maximilliano Cramer</em></a>. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Scripts Js-->
   <script src="script.js"></script>
+
+  <!-- Scripts Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
