@@ -41,38 +41,6 @@ p {
   flex-grow: 1; /* Faz o conteúdo crescer e ocupar o espaço restante do card */
 }
 
-/* Posiciona a seta no canto inferior direito */
-.scroll-down {
-  position: fixed;
-  bottom: 20px; /* Distância do fundo */
-  right: 20px; /* Distância da direita */
-  z-index: 1000; /* Garante que a seta fique acima de outros elementos */
-  cursor: pointer;
-  animation: bounce 2s infinite; /* Animação de movimento */
-}
-
-.scroll-down img {
-  width: 50px; /* Tamanho da seta */
-  height: auto;
-  object-fit: contain; /* Garante que a seta não fique distorcida */
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
 /* Estilo do ícone de perfil */
 .navbar-icon {
   width: 80px; /* Tamanho do ícone */
